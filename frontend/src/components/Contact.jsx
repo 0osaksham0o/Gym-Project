@@ -11,6 +11,10 @@ const Contact = () => {
 
   const sendMail = async (e) => {
     e.preventDefault();
+    if (!email.endsWith("@gmail.com")) {
+      toast.error("Please enter a valid Gmail address.");
+      return; // Stop the function if the email is invalid
+    }
     setLoading(true);
     try {
       const { data } = await axios.post(
@@ -37,11 +41,11 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact">
+    <section className="contact" >
       <form onSubmit={sendMail}>
         <h1>CONTACT US</h1>
         <div>
-          <label>Name</label>
+          <label style={{color:'black'}}>Name</label>
           <input
             type="text"
             value={name}
@@ -49,7 +53,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label>Email</label>
+          <label style={{color:'black'}}>Email</label>
           <input
             type="email"
             value={email}
@@ -57,7 +61,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label>Message</label>
+          <label style={{color:'black'}}>Message</label>
           <input
             type="text"
             value={message}

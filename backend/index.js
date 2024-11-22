@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'; 
 import { promises as fs } from 'fs'; 
 
+
 const app = express();
 const PORT = 8080; 
 
@@ -50,6 +51,17 @@ app.post('/api/testimonials', async (req, res) => {
       console.error('Error saving testimonial:', error);
       res.status(500).json({ error: 'Error saving testimonial.' });
     }
+  }
+});
+
+app.get('/api/testimonials', async (req, res) => {
+  try {
+    const data = await fs.readFile('./testimonials.json', 'utf-8');
+    const testimonials = JSON.parse(data);
+    res.json(testimonials); // Send the testimonials back as a JSON response
+  } catch (error) {
+    console.error('Error reading testimonials:', error);
+    res.status(500).json({ error: 'Error fetching testimonials.' });
   }
 });
 
