@@ -61,6 +61,9 @@ import TestimonialForm from "./components/TestimonialForm";
 import { AuthProvider } from "../context/AuthContext";  // Import AuthProvider
 import TestimonialsPage from "./components/DisplayTestimonial";
 import Ytvideos from "./components/Ytvideos";
+import FileUpload from "./components/File_upload";
+import PaymentPage from "./components/PaymentPage";
+
 
 
 const App = () => {
@@ -75,10 +78,12 @@ const App = () => {
               <WorkoutSessions />
               <Gallery />
               <Pricing />
+              <FileUpload/>
               <Contact />
               <BMICalculator />
               <TestimonialForm/>
               <TestimonialsPage/>
+
               
               
             </>
@@ -86,6 +91,7 @@ const App = () => {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/ytvideos" element={<Ytvideos />} />
+          <Route path="/paymentpage" element={<PaymentPage/>}/>
         </Routes>
         <ToastContainer theme="dark" position="top-center" />
       </Router>

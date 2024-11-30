@@ -20,8 +20,18 @@ const TestimonialForm = () => {
   };
 
   return (
-    <div>
-      <h2>Submit Your Testimonial</h2>
+    <div 
+    style={{
+      backgroundColor: "#1e1e1e", // Dark gray background
+      color: "#ffffff", // White text
+      padding: "40px",
+      fontFamily: "Roboto, sans-serif",
+      textAlign: "center",
+    }}>
+      <h2 style={{fontSize: "32px",
+          fontWeight: "bold",
+          color: "#007bff", // Blue accent color for heading
+          marginBottom: "30px",}}>Submit Your Testimonial</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

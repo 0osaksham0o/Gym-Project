@@ -1,0 +1,128 @@
+/* Chatbot Container */
+.chatbot-container {
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 400px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+  }
+  
+  /* Header for the Chatbot */
+  .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chatbot-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #0095ff;
+  }
+  
+  /* Chat Messages Container */
+  .chatbox {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for individual messages */
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* User message styling */
+  .messages .user p {
+    background-color: #0095ff;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 70%;
+    align-self: flex-end;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  
+  /* Bot message styling */
+  .messages .bot p {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 70%;
+    align-self: flex-start;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  
+  /* User Input Section */
+  .user-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Text input field for typing a message */
+  .user-input input {
+    width: 80%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  /* Send button */
+  .user-input button {
+    background-color: #0095ff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Send button hover effect */
+  .user-input button:hover {
+    background-color: #0077cc;
+  }
+  
+  /* Scroll bar for chat messages */
+  .chatbox::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .chatbox::-webkit-scrollbar-thumb {
+    background-color: #0095ff;
+    border-radius: 10px;
+  }
+  
+  .chatbox::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* For small screen devices, adjust width */
+  @media (max-width: 400px) {
+    .chatbot-container {
+      width: 90%;
+      bottom: 10px;
+      right: 5%;
+    }
+  }
+  
